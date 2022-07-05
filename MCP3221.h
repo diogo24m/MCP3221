@@ -122,16 +122,10 @@
 
  *==============================================================================================================*/
 
-#if 1
-__asm volatile ("nop");
-#endif
+
 
 #ifndef MCP3221_h
 #define MCP3221_h
-
-#if !defined(ARDUINO_ARCH_AVR)
-#error “The MCP3221 library only supports AVR processors.”
-#endif
 
 #include <Arduino.h>
 #include <Wire.h>
@@ -198,8 +192,9 @@ namespace Mcp3221 {
             void         setSmoothing(smoothing_t newSmoothing);
             void         reset();
         private:
-            byte         _devAddr, _voltageInput, _smoothing, _numSamples, _comBuffer;
+            byte         _devAddr;
             unsigned int _vRef, _res1, _res2, _alpha;
+            byte         _voltageInput, _smoothing, _numSamples, _comBuffer;
             unsigned int _samples[MAX_NUM_SAMPLES];
             unsigned int getRawData();
             unsigned int smoothData(unsigned int rawData);

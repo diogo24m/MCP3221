@@ -44,17 +44,17 @@ class MCP3221_PString : public Print {
         }
 
         // returns the length of the current string, not counting the 0 terminator
-        inline const size_t length() {
+        size_t length() {
             return _cur - _buf;
         }
 
         // returns the capacity of the string
-        inline const size_t capacity() {
+        size_t capacity() {
             return _size;
         }
 
         // gives access to the internal string
-        inline operator const char *() {
+        operator const char *() {
             return _buf;
         }
 

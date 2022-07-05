@@ -39,7 +39,7 @@ __asm volatile ("nop");
 #ifndef MCP3221ComStr_h
 #define MCP3221ComStr_h
 
-#include <avr/pgmspace.h>
+#include <pgmspace.h>
 
 namespace Mcp3221 {
 

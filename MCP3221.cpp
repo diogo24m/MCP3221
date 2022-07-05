@@ -32,9 +32,7 @@
  
  *==============================================================================================================*/
 
-#if 1
-__asm volatile ("nop");
-#endif
+
 
 #include "MCP3221.h"
 
@@ -284,4 +282,3 @@ unsigned int MCP3221::smoothData(unsigned int rawData) {
     }
     return smoothedData;
 }
-
